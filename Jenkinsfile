@@ -24,7 +24,7 @@ pipeline{
 
         stage ('staging') {
             steps {
-                sshPublisher(publishers: [sshPublisherDesc(configName: 'docker-host', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'cd devsecops/vulnerable/staging && docker-compose up -d  && sleep 40 && docker rm -vf staging_VulnerableApp-facade_1 staging_VulnerableApp-php_1 staging_VulnerableApp-jsp_1 staging_VulnerableApp-base_1', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: 'devsecops/vulnerable/staging', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '**/*')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true)])
+                sshPublisher(publishers: [sshPublisherDesc(configName: 'docker-host', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '**/*')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true)])
             }
         }
 
